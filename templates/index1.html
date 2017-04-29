@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block contentblock %}
+<!-- Full Page Image Background Carousel Header -->
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style=background-image:url("{% static 'img/bgi.jpg' %}")></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style=background-image:url("{% static 'img/bgi2.jpg' %}")>
+                </div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style=background-image:url("{% static 'img/giveaway.jpg'%}");></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
+{% block styleblock %}
+    <!-- Custom CSS -->
+    <link href="{% static 'css/full-slider.css' %}" rel="stylesheet">
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block javascript %}
+<!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+
+        interval: 2000 //changes the spee
+    })
+    </script>
+{% endblock %}

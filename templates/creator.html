@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block contentblock %}
+
+    {% if form.errors %}
+        <p>plz enter your valid information</p>
+    {% endif %}
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>you are note autherised to visit the page</p>
+        {% else %}
+            <p>please login to continue</p>
+        {% endif %}
+    {% endif %}
+    < class="container">
+    <div class="row">
+        <div class="col-md-4        col-md-offset-4">
+            <div class="creator-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2>Creator registration form</h2>
+                </div>
+
+                <div class="panel-body">
+                    <form action="{% url 'creator' %}" method="post">
+                        {% csrf_token %}
+                        <div class="username">
+                            {{ form.name.label_tag }}<br>
+                            {{ form.name }}
+                        </div>
+
+                        <div class="email">
+                            {{ form.email.label_tag }}<br>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="password">
+                            {{ form.password.label_tag }}<br>
+                            {{ form.password }}
+                        </div>
+
+                        <div class="contact">
+                            {{ form.contact.label_tag }}<br>
+                            {{ form.contact }}
+                        </div>
+
+
+                        <div class="area_of_intrest">
+                            {{ form.area_of_intrest.label_tag }}<br>
+                            {{ form.area_of_intrest }}
+                        </div>
+
+                        <div class="age">
+                            {{ form.age.label_tag }}<br>
+                            {{ form.age }}
+                        </div>
+
+                        <div class="profile_image">
+                            {{ form.profile_image.label_tag }}<br>
+                            {{ form.profile_image }}
+                            <div>
+                                <input type="submit" class="btn btn-success" value="login">
+                                <input type="hidden" value="{{ next }}" name="next">
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        {% if not user.is_authenticated %}
+            $('.creator-panel').css('display', 'none');
+        {% endif %}
+    </script>
+{% endblock %}

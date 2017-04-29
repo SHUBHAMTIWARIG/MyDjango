@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block contentblock %}
+
+    <header class="row header1">
+        <div class="container">
+            <div class="logo pull-left">
+                <h1><b>Giveaways</b></h1>
+                <img src="{% static 'images/capture.png' %}" alt="" style="height:100px;" width="220px;">
+            </div>
+            <form action="#" method="post" role="form" class="pull-left language_picker">
+                <select name="language" class="selectpicker">
+                    <option value="en">en</option>
+                    <option value="bn">bn</option>
+                    <option value="ar">ar</option>
+                </select>
+            </form>
+            <a href="#call_box" class="btn-primary btn-outline hidden-sm hidden-xs pull-right">Call Now</a>
+
+
+            <div class="pull-right emergency-contact">
+                <div class="pull-left">
+                    <span><i class="fa fa-envelope-o"></i></span>
+                    <div class="infos_col">
+                        <h6>email us at</h6>
+                        <a href="mailto:isrktiwari@gmail.com"><h5>isrktiwari@gmail.com</h5></a>
+                        <a href="mailto:srktiwari@hotmail.com"><h5>srktiwari@hotmail.com</h5></a>
+
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <span class="rotate"><i class="fa fa-phone"></i></span>
+                    <div class="infos_col">
+                        <h6>call us now</h6>
+                        <h4>+9795990077</h4>
+                        <h4>+918299180054</h4>
+                        <h4>+917071237096</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row page-header">
+        <div class="container">
+            <title>giveaways</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <style>
+                .mySlides {
+                    display: none;
+
+                }
+
+                .w3-left, .w3-right, .w3-badge {
+                    cursor: pointer;
+                    color: black;
+                }
+
+                .w3-badge {
+                    height: 13px;
+                    width: 13px;
+                    padding:0
+                }
+            </style>
+            <body>
+            <div class="w3-content w3-display-middle" style="max-height:880px; max-width:800px; margin-left:50px;">
+                <img class="mySlides" src="{% static "images/usa-1249880_1920.jpg" %}" style="width:100%">
+                <img class="mySlides" src="{% static "images/abstract-1231889_640.jpg" %}" style="width:100%">
+                <img class="mySlides" src="{% static "images/blur-1853305_640.jpg" %}" style="width:100%">
+                <img class="mySlides" src="{% static "images/close-up-2178341_640.jpg" %}" style="width:100%">
+                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+                     style="width:100%">
+                    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                </div>
+            </div>
+
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function currentDiv(n) {
+                    showDivs(slideIndex = n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("demo");
+                    if (n > x.length) {
+                        slideIndex = 1
+                    }
+                    if (n < 1) {
+                        slideIndex = x.length
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" w3-white", "");
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " w3-white";
+                }
+            </script>
+
+            </body>
+        <marquee><h4>We Are COIDE-<i><u>The Realtime CodingGround</u></i></h4></marquee>
+    </section>
+    <section class="row content_about page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 who_we_are">
+                    <h6 class="label label-defatult about_var">who we are</h6>
+                    <h3 class="team_page_title">we are Team Co-ide</h3>
+                    <p class="team_page_para about_var">Co-ide team provide coding playground for programmers and
+                        non-programmers.</p>
+
+                    <p><u>Purpose of our project to provide facilities,not only to the programmers but also for the
+                        Students
+                        to gaining the knowledge.</u></p>
+                    <p><u>Functioning based on the realtime preview which supports for CSS,HTMl and JAVASCRIPT.</u></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mission_vision">
+                <div class="col-sm-3">
+                    <i class="fa fa-gratipay"></i>
+                    <h5>vision</h5>
+                    <p>Duis aliquet tortor id velit vulputate blandit. Nulla facilisi. Praesent eu massa sit amet turpis
+                        blandit
+                        interdum sed id sem.</p>
+                </div>
+                <div class="col-sm-3">
+                    <i class="fa fa-star"></i>
+                    <h5>mission</h5>
+                    <p>Suspendisse commodo nisi nec elit sollicitudin iaculis. Pellentesque ullamcorper ultricies augue,
+                        eget
+                        malesuada felis convallis nec.</p>
+                </div>
+                <div class="col-sm-3">
+                    <i class="fa fa-thumbs-up"></i>
+                    <h5>career</h5>
+                    <p>Nam a dolor nec risus pellentesque ornare. Ut at eleifend nulla, in pulvinar mi. Donec metus est,
+                        tempus
+                        laoreet elit sed.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="team_page_title">Developer Team</h3>
+                    <p class="team_page_para about_var"><u>Trio of team developed a codingground to accomplish easy
+                        programming
+                        and
+                        learning.</u></p>
+                    <div class="w3-container w3-center w3-animate-zoom">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-4 col-md-3 team_member">
+                            <img src="{% static 'images/dev.jpg' %}" alt="" class="img-responsive">
+                            <h4>Devansh Mishra</h4>
+                            <h6>Co-Founder <br>and President</h6>
+                        </div>
+                            <div class="col-xs-3 col-sm-4 col-md-3 team_member">
+                            <img src="{% static 'images/ajeet.jpg' %}" alt="" class="img-responsive">
+                            <h4>Ajeet Singh Vashisth</h4>
+                            <h6>Co-Founder &amp; <br>President</h6>
+                        </div>
+                        <div class="col-xs-3 col-sm-4 col-md-3 team_member">
+                            <img src="{% static 'images/ajay.jpg' %}" alt="" class="img-responsive">
+                            <h4>Ajay sonker</h4>
+                            <h6>Co-Founder &amp; <br>President</h6>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="row newsletter_signup style3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h4>FEEDBACK AND REPORT</h4>
+                    <p>Give us your views</p>
+                </div>
+                <form class="col-sm-7 form-inline newsletter_signup_form">
+                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                    <input type="submit" value="submit" class="btn-primary white">
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
